@@ -17,6 +17,7 @@ keyboard.parsed_keybinds = {}
 		2. ^: CTRL
 		3. !: Alt
 		4. ~: Shift
+		5. @: Windows
 		For example: "%~1" means "Shift+1" when chat window is not active.
 --]]
 --
@@ -214,6 +215,8 @@ function keyboard:parse_keybinds()
               col_list[string_value] = "%~"
             elseif (col_list[string_value]:contains("alt")) then
               col_list[string_value] = "!"
+            elseif (col_list[string_value]:contains("win")) then
+              col_list[string_value] = "@"
             end
           end
         end
